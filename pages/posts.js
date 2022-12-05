@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
+import api from "../api";
+import { useAuth } from "../auth_context";
 
 export default function Posts() {
     const [posts, setPosts] = useState(null);
-
+    const { user, logout } = useAuth()
+    console.log(user)
     useEffect(() => {
         async function fetchPosts() {
-            const res = await fetch("http://localhost:3000/api/posts");
-            const postsList = await res.json();
+            const { data: postsList } = await api.get("api/posts");
             setPosts(postsList);
+            console.log(postsList);
         }
-        fetchPosts()
-    });
+        if(user) fetchPosts()
+    }, [user]);
 
+    const onClick = async () => {
+        await logout()
+    }
     return (
         <>
         <ul>
@@ -19,7 +25,7 @@ export default function Posts() {
                 return (<li key={post.id}>{post.text}</li>)
             })}
         </ul>
-
+            <button onClick={logout}>Logout</button>
         </>
     )
 }
