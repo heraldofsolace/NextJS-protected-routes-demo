@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useAuth } from '@clerk/nextjs';
 
 export default function Posts() {
     const [posts, setPosts] = useState(null);
+    const { getToken, isLoaded, isSignedIn } = useAuth();
 
     useEffect(() => {
         async function fetchPosts() {
@@ -9,7 +11,7 @@ export default function Posts() {
             const postsList = await res.json();
             setPosts(postsList);
         }
-        fetchPosts()
+        if(isLoaded && isSignedIn) fetchPosts()
     });
 
     return (

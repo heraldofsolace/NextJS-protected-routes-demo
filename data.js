@@ -1,6 +1,6 @@
 export const users = [
     {
-        id: 1,
+        id: "user_2IUxt1YsiCfebtlUwOe5dU91Det",
         username: "bob",
         name: "Bob",
         location: "USA",
@@ -25,7 +25,7 @@ export const users = [
 export const posts = [
     {
         id: 1,
-        userId: 1,
+        userId: "user_2IUxt1YsiCfebtlUwOe5dU91Det",
         text: "Hello, World!"
     },
     {
@@ -35,7 +35,7 @@ export const posts = [
     },
     {
         id: 3,
-        userId: 1,
+        userId: "user_2IUxt1YsiCfebtlUwOe5dU91Det",
         text: "Lorem ipsum dolor sit amet. "
     },
     {

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.6.7",
     "bcryptjs": "^2.4.3",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
