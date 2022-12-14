@@ -30,10 +30,12 @@ const LoginForm = () => {
         {({ isSubmitting }) => (
             <Form>
                 <div>
+                    <label>Username</label><br />
                     <Field name="username" type="text"></Field>
                     <ErrorMessage name="username" component="p"></ErrorMessage>
                 </div>
                 <div>
+                    <label>Password</label><br />
                     <Field name="password" type="password"></Field>
                     <ErrorMessage name="password" component="p"></ErrorMessage>
                 </div>
